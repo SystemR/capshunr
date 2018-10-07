@@ -1,0 +1,13 @@
+<div class='cue-header' #header (dblclick)='editCue()' (mousedown)='startChangeStartTime($event)'>
+  <div class='duration'>Duration: {{cue.end - cue.start | number: '0.3'}}</div>
+  <div class='start-time'>Start: {{cue.start | number: '0.3'}}</div>
+</div>
+<div class='cue-content' #content (dblclick)='editCue()' title='Double click to edit'>
+  <div *ngFor='let text of cue.text' class='text'>
+    {{text}}
+  </div>
+</div>
+<div class='cue-expander' #expander (mousedown)='startChangeEndTime($event)'>
+  <hr />
+  <hr />
+</div>

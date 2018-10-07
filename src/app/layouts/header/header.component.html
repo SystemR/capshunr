@@ -1,0 +1,24 @@
+<div class='header-title'>Capshuner</div>
+<div class='pull-right'>
+  <div class='button' (click)='chooseFileSave()'>
+    <div class='title'>Save Subtitle...</div>
+    <div class='title-sub'>(Will save as VTT file)</div>
+  </div>
+</div>
+<div class='button' (click)='chooseVideo()'>
+  <div class='title'>Load Movie...</div>
+  <div class='title-sub'>(mp4 or any web readable)</div>
+</div>
+<div class='button' (click)='chooseSubtitle()'>
+  <div class='title'>Load Subtitle...</div>
+  <div class='title-sub'>(SRT or VTT file)</div>
+</div>
+
+<div class='hidden'>
+  <div class='file-section'>
+    <input #videoInput (change)="loadVideo($event)" type="file" accept="video/*" />
+  </div>
+  <div class='file-section'>
+    <input #subtitleInput (change)="loadSubtitle($event)" type="file" accept='.vtt,.srt' />
+  </div>
+</div>

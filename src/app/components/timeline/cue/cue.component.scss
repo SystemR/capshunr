@@ -1,0 +1,58 @@
+:host {
+  position: absolute;
+  left: 45px;
+  right: 45px;
+  min-height: 30px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  font-size: 12px;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:hover {
+    .cue-edit-button {
+      display: block;
+    }
+  }
+}
+
+.duration {
+  float: right;
+}
+
+.cue-header {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 5px 10px;
+  cursor: move;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.cue-content {
+  margin-top: 23px;
+  padding: 10px;
+  font-size: 14px;
+  height: 100%;
+}
+
+.cue-expander {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+
+  hr {
+    margin: 1px 0;
+    border-color: #666;
+  }
+
+  &:hover {
+    cursor: ns-resize;
+  }
+}

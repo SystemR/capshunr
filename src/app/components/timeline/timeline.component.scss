@@ -1,0 +1,81 @@
+@import '../../../styles/_variables';
+
+.header {
+  height: 90px;
+  color: #fff;
+  font-family: menlo, monospace;
+  background: $light-gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7) inset;
+  text-align: right;
+  padding: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  .time {
+    font-size: 40px;
+  }
+
+  .duration {
+    font-size: 14px;
+  }
+}
+
+.timeline-container {
+  width: 100%;
+  height: calc(100% - 85px);
+  overflow-y: auto;
+  background: $dark;
+
+  &:hover {
+    .actions .btn {
+      display: inline;
+    }
+  }
+}
+
+.timeline {
+  color: #fff;
+  margin-top: 100px;
+  font-size: 13px;
+  position: relative;
+}
+
+.cursor {
+  position: fixed;
+  right: 0;
+  top: 100px + $header-height;
+  width: $side-bar-width;
+  border-top: 1px solid red;
+  z-index: 10;
+}
+
+// Total of height + padding-top + border-top should be the MULTIPLIER
+.num {
+  height: 80px;
+  padding-top: 5px;
+  padding-left: 5px;
+  border-top: 1px solid lighten($dark, 30%);
+  color: $light-gray;
+}
+
+.actions {
+  .btn {
+    position: fixed;
+    top: 65px + $header-height;
+    width: auto;
+    z-index: 10;
+    background: rgba(49, 54, 63, 0.7);
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 16px;
+    margin: 0;
+    display: none;
+  }
+
+  .btn--add {
+    margin-left: 15px;
+  }
+
+  .btn--clear {
+    right: 15px;
+  }
+}

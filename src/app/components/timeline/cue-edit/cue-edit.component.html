@@ -1,0 +1,50 @@
+<div class='form-container'>
+  <form #editForm='ngForm' (ngSubmit)='save()' autocomplete="off">
+    <div class='form-group'>
+      <div class="field" [ngClass]='{ error: hasStartTimeError }'>
+        <label class="label">Start</label>
+        <div class="control">
+          <input class="input" type="number" name='start' step='0.001' required [(ngModel)]='formCue.start' placeholder="Start Time"
+            (ngModelChange)='updateTime()'>
+        </div>
+        <p class='help' [hidden]='!hasStartTimeError'>
+          Start Time cannot be blank or starts before previous subtitle's end time</p>
+      </div>
+      <div class="field" [class.error]='hasEndTimeError'>
+        <label class="label">End</label>
+        <div class="control">
+          <input class="input" type="number" name='end' step='0.001' required [(ngModel)]='formCue.end' placeholder="End Time" (ngModelChange)='updateTime()'>
+        </div>
+        <p class='help' [hidden]='!hasEndTimeError'>
+          End Time cannot be blank or exceeds next subtitle's start time</p>
+      </div>
+      <div class="field">
+        <label class="label">Duration (>= 0.400)</label>
+        <div class="control">
+          <input class="input" type="number" name='duration' step='0.001' [(ngModel)]='duration' placeholder="Duration" (ngModelChange)='onDurationUpdate()'>
+        </div>
+      </div>
+    </div>
+    <div class="field" [ngClass]='{ error: hasTextError }' #texts>
+      <label class="label">Text</label>
+      <div class="control" *ngFor='let text of formCue.text; let i = index; trackBy: trackByIndex;'>
+        <input class="input" type="text" name='text-{{i}}' [(ngModel)]='formCue.text[i]' placeholder="Enter text" (ngModelChange)='validateText($event)'
+          [autofocus]='!formCue.text.length || (i === formCue.text.length - 1)'>
+        <span class='btn btn-text' (click)='addAfterIndex(i)'>+</span>
+        <span class='btn btn-text' (click)='removeAtIndex(i)'>-</span>
+      </div>
+    </div>
+    <div class="field actions">
+      <div class="control pull-left" *ngIf='!isNewCueEditMode'>
+        <button type='button' class='btn btn-danger' (click)='removeCue()'>Delete Cue</button>
+      </div>
+      <div class="control">
+        <button type='submit' [disabled]='editForm.invalid || hasStartTimeError || hasEndTimeError || hasTextError || editForm.pristine'
+          class="btn">Save</button>
+      </div>
+      <div class="control">
+        <button type='button' class="btn btn-default" (click)='cancel()'>Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

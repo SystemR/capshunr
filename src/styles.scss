@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'styles/normalize';
+@import 'styles/_variables';
+@import 'styles/modal';
+@import 'styles/form';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  background: $background;
+  color: #fff;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+* {
+  user-select: none;
+}

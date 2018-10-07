@@ -1,0 +1,15 @@
+<div class='header'>
+  <div class='time'>{{time | number: "0.3"}}</div>
+  <div class='duration'>{{duration | number: '0.3'}}</div>
+</div>
+<div class='timeline-container' #timelineContainer>
+  <div class='actions'>
+    <span class='btn btn-text btn--clear' (click)='clear()'>Clear...</span>
+    <span class='btn btn-text btn--add' (click)='add()'>+ Add...</span>
+  </div>
+  <div class='cursor' #cursor></div>
+  <div class='timeline' #timeline>
+    <div *ngFor='let num of numbers' class='num'>{{num}}</div>
+    <app-cue *ngFor='let cue of cues' [cue]='cue'></app-cue>
+  </div>
+</div>

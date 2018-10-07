@@ -1,0 +1,104 @@
+@import '_variables';
+@import '_mixins';
+
+.form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 3px;
+  color: $dark;
+}
+
+.field {
+  padding: 6px 12px;
+  margin-bottom: 15px;
+
+  label.label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .control {
+    display: flex;
+    margin-bottom: 5px;
+    .input {
+      padding: 14px;
+      border: 1px solid $light-gray;
+      font-size: 18px;
+      border-radius: 3px;
+      width: 100%;
+      flex: 1;
+    }
+  }
+
+  &.error {
+    input {
+      border: 1px solid $red !important;
+      &:focus {
+        outline-color: $red !important;
+      }
+    }
+    .help {
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  &.actions {
+    @include clearfix;
+    .control {
+      float: right;
+      .btn {
+        margin-left: 15px;
+        display: inline-block;
+      }
+
+      &.pull-left {
+        .btn {
+          margin-left: 0;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  .field {
+    flex: 1;
+  }
+}
+
+.btn {
+  border-radius: 3px;
+  background: $dark;
+  color: #fff;
+  padding: 12px 10px;
+  min-width: 150px;
+  cursor: pointer;
+
+  &.btn-default {
+    background: $light-gray;
+  }
+
+  &.btn-danger {
+    background: $red;
+  }
+
+  &.btn-text {
+    margin: 5px;
+    padding: 0;
+    border-radius: 100px;
+    min-width: auto;
+    font-size: 21px;
+    line-height: 37px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+  }
+
+  &:disabled {
+    background: lighten($dark-gray, 10%);
+    color: $light-gray;
+  }
+}

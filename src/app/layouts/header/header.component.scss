@@ -1,0 +1,48 @@
+@import '../../../styles/_variables';
+
+:host {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: $side-bar-width;
+  height: $header-height;
+  background: $dark;
+  padding: 0 15px;
+  min-width: 960px;
+
+  > div {
+    float: left;
+    height: 100%;
+  }
+}
+
+.header-title {
+  font-size: 40px;
+  line-height: 90px;
+  padding: 0 100px 0 0;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid $dark-gray;
+  border-right: 1px solid $dark-gray;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 175px;
+  height: 100%;
+  cursor: pointer;
+
+  .title {
+    font-size: 21px;
+    margin-bottom: 5px;
+  }
+  .title-sub {
+    font-size: 11px;
+  }
+
+  &:hover {
+    background: lighten($dark, 30%);
+  }
+}

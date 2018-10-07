@@ -1,0 +1,8 @@
+<div class='video-container'>
+  <video #videoPlayer class='video' controls (click)='togglePlay()' [hidden]='!isVideoLoaded'></video>
+  <div class='subtitle' [hidden]='!isVideoLoaded'>
+    <div *ngFor='let text of displayCue?.text'>
+      <span [innerHTML]='text'></span>
+    </div>
+  </div>
+</div>

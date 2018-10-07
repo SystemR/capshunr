@@ -1,0 +1,10 @@
+@import '../../../styles/_variables';
+
+:host {
+  position: fixed;
+  left: 0;
+  right: $side-bar-width;
+  top: 90px;
+  bottom: 0;
+  min-width: 960px;
+}
