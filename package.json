@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --source-map --host 0.0.0.0 -o --hmr -c=hmr --port 4600",
+    "start": "ng serve --source-map --host 0.0.0.0 -o --hmr --c=hmr --port 4600",
     "build": "ng build --prod --build-optimizer",
     "test": "ng test",
     "lint": "ng lint",
